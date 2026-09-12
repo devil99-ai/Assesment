@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Master Suite">
+	<groups>
+		<!-- <run>
+			<include name="Sanity"/>
+			<include name="Regression"/>
+			<include name="Master"/>
+			
+		</run> -->
+	</groups>
+	
+	<listeners>
+		<listener class-name="reports.ExtentReportManager"/>
+	</listeners>
+	
+	<test thread-count="5" name="Test">
+		<parameter name="os" value="Windows"/>
+		<parameter name="browser" value="chrome"/>
+		
+		<classes>
+			<class name="testLayer.testLogin"/>
+			<!-- <class name="testLayer.ApiTesting"/>
+			<class name="testLayer.AppTest"/>
+			<class name="testLayer.MedicareApp_testingTestng"/> -->
+			
+		</classes>
+	</test>
+</suite>
